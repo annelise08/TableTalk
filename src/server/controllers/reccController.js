@@ -9,6 +9,8 @@ reccController.getReccs = (req, res, next) => {
     db.query(getReccsQuery)
     .then(data => {
         console.log(data.rows)
+        // store reccs (array of objects) in res.locals
+        res.locals.reccs = data.rows;
         return next();
     })
     .catch(err => {

@@ -18,6 +18,8 @@ app.get('/recc',
     reccController.getReccs,
     (req, res) => {
         console.log('made it to server!')
+        // send back array of objects
+        res.status(200).send(res.locals.reccs)
 })
 
 app.listen(PORT, () => {

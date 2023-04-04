@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Reccomendations from './Reccomendations';
 
 class App extends Component {
     // app should render reccomendations page
@@ -7,6 +7,7 @@ class App extends Component {
         return (
             <div>
                 <h1>Hello world!</h1>
+                < Reccomendations />
             </div>
         )
     }
