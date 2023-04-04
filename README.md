@@ -1,2 +1,14 @@
 # TableTalk-solo-project
 TableTalk lets you share restaurant recommendations with friends.
+
+Steps:
+
+SETTING UP WEBPACK
+- Create git ignore file to not track package-lock/node modules
+- Create a package.json file to track dependencies
+- Install React
+- Install React-Dom
+- Install webpack and webpack-dev-server
+- Install babel-core as dev dependency so we can use it as a transpiler
+- Install other babel packages
+- Install html-webpack-plugin
