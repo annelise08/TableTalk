@@ -3,3 +3,4 @@ package-lock.json
 dist/*.js
 npm-debug.log
 src/images
+src/server/models/reccsModels.js
