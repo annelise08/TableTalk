@@ -1,0 +1,1 @@
+// Reccomendations page should request data from the database, then render all data as cards

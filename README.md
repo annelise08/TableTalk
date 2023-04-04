@@ -12,3 +12,7 @@ SETTING UP WEBPACK
 - Install babel-core as dev dependency so we can use it as a transpiler
 - Install other babel packages
 - Install html-webpack-plugin
+
+SETTING UP SERVER
+- Installed Express
+- Updated package json scripts based on build tools module to run nodemon in development mode

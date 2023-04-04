@@ -1,0 +1,1 @@
+// this will render an individual card component

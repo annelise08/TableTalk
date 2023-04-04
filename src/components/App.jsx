@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-class App extends Component {
 
+class App extends Component {
+    // app should render reccomendations page
     render() {
         return (
             <div>
