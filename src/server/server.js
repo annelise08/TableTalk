@@ -3,6 +3,7 @@
 
 const path = require('path');
 const express = require('express');
+const reccController = require('./controllers/reccController');
 
 const app = express();
 
@@ -13,8 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // test get request is working
-app.get('/recc', (req, res) => {
-    console.log('made it to server!')
+app.get('/recc',
+    reccController.getReccs,
+    (req, res) => {
+        console.log('made it to server!')
 })
 
 app.listen(PORT, () => {
