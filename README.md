@@ -28,3 +28,4 @@ SETTING UP FRONT END
 - Updated webpack rules to include bootstrap
 - Imported bootstrap to styles.scss
 - Figured out I need to use React Bootstrap, installed that
+- Was able to get React Bootstrap working by requiring in css module in entry point(index.js file)

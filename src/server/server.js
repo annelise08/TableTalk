@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // tried using path.resolve to serve files, not working
-app.get('/images', express.static('../images'))
+// app.get('/images', express.static(path.resolve('../images')))
 
 // test get request is working
 app.get('/recc',

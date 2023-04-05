@@ -19,7 +19,7 @@ module.exports = {
             directory: path.resolve(__dirname, 'dist')
         },
         proxy: {
-            '/recc': 'http://localhost:3000'
+            '/recc': 'http://localhost:3000',
         }
     },
     module: {
