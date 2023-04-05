@@ -1,6 +1,7 @@
 // this will render an individual card component
 import React from "react";
 import Card from 'react-bootstrap/Card'
+import { ListGroup } from "react-bootstrap";
 
 const ReccCard = ({
     info
@@ -8,13 +9,15 @@ const ReccCard = ({
     const {restaurant_name, fav_dishes, stars, notes, photo_name} = info;
     return (
       <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdoH7lJoG8RO6l0tUSaDyeijKEE_MYS0Ss7YwNgkDEdA&usqp=CAU&ec=48600113" />
+      <Card.Img variant="top" src={photo_name} />
       <Card.Body>
         <Card.Title>{restaurant_name}</Card.Title>
         <Card.Text>
-          Stars: {stars}/5
-          <div>Favorite Dishes: {fav_dishes}</div> 
-          <div>Notes: {notes}</div>
+          <ListGroup>
+          <ListGroup.Item> <b>Stars:</b> {stars}/5 </ListGroup.Item>
+          <ListGroup.Item><b>Favorite Dishes: </b>{fav_dishes} </ListGroup.Item>
+          <ListGroup.Item><b>Notes:</b> {notes} </ListGroup.Item>
+          </ListGroup>
         </Card.Text>
       </Card.Body>
     </Card>
