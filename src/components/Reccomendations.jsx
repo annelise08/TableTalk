@@ -1,5 +1,6 @@
 // Reccomendations page should request data from the database, then render all data as cards
 import React, { Component } from 'react';
+import ReccCard from './ReccCard';
 
 class Reccomendations extends Component {
     constructor(props) {
@@ -25,8 +26,23 @@ class Reccomendations extends Component {
     }
 
     render() {
-        if (this.state.fetchedReccs) return (
-            <div>Fetched Reccs</div>
+
+        if (this.state.fetchedReccs && this.state.reccs !== []) {
+            const { reccs } = this.state;
+            const reccElements = reccs.map((recc, i) => {
+                return (
+                    <ReccCard
+                    key={i}
+                    info={recc}
+                    />
+                )
+            })
+            return (
+    
+                <div>{reccElements}</div>
+            )
+        } else return (
+            <div>No reccomendations found</div>
         )
     }
 }

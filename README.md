@@ -16,3 +16,15 @@ SETTING UP WEBPACK
 SETTING UP SERVER
 - Installed Express
 - Updated package json scripts based on build tools module to run nodemon in development mode
+
+SETTING UP BACKEND
+- Set up SQL database
+- Set up route and middleware to query database
+
+SETTING UP FRONT END
+- Made a request to server to access data
+- Reccommendations page creates and loads recc cards
+- Installed bootstrap for easier formatting
+- Updated webpack rules to include bootstrap
+- Imported bootstrap to styles.scss
+- Figured out I need to use React Bootstrap, installed that
