@@ -7,7 +7,7 @@ import { ListGroup } from "react-bootstrap";
 const AddReccCard = () => {
   return (
     <div className="add-recc">
-      <h2>Add a new reccomendation</h2>
+      <h2>Add a reccomendation</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -26,11 +26,11 @@ const AddReccCard = () => {
         }}
       >
         <div>
-          <label>Restaurant name: </label>
+          <label>Restaurant: </label>
           <input type="text" />
         </div>
         <div>
-          <label>Favorite dishes: </label>
+          <label>Best dishes: </label>
           <input type="text" />
         </div>
         <div>
@@ -45,7 +45,7 @@ const AddReccCard = () => {
           <label>Image link: </label>
           <input type="text" />
         </div>
-        <button type="submit">Add reccomendation</button>
+        <button type="submit" className="btn btn-primary">Add reccomendation</button>
       </form>
     </div>
   );

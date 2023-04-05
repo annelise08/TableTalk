@@ -17,6 +17,7 @@ const ReccCard = ({
           <ListGroup.Item> <b>Stars:</b> {stars}/5 </ListGroup.Item>
           <ListGroup.Item><b>Favorite Dishes: </b>{fav_dishes} </ListGroup.Item>
           <ListGroup.Item><b>Notes:</b> {notes} </ListGroup.Item>
+          <ListGroup.Item><button className="btn btn-primary">Delete</button></ListGroup.Item>
           </ListGroup>
         </Card.Text>
       </Card.Body>

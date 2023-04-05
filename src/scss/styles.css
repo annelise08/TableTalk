@@ -17,6 +17,45 @@ nav {
     justify-content: center;
 }
 
+.add-recc {
+    width: 18rem;
+}
 .add-recc form button{
     display: block;
+}
+
+.add-recc form * {
+    margin: .15rem;
+    display: flex;
+    justify-content: center;
+}
+
+.add-recc form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-recc form div label {
+    font-weight: 500;
+}
+
+.add-recc h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card {
+    margin: .5rem;
+}
+
+.btn {
+    border: none;
+    background-color: 
+    #f07a05;
+
+}
+
+.add-recc .btn {
+    background-color: #7ac0f7;
 }
