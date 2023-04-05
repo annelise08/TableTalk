@@ -13,8 +13,8 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// tried using path.resolve to serve files
-app.get('/images/', express.static('../images'))
+// tried using path.resolve to serve files, not working
+app.get('/images', express.static('../images'))
 
 // test get request is working
 app.get('/recc',
