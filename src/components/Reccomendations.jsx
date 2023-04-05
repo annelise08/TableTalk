@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReccCard from './ReccCard';
 import {CardGroup} from 'react-bootstrap';
+import AddReccCard from './AddReccCard';
 
 class Reccomendations extends Component {
     constructor(props) {
@@ -42,10 +43,13 @@ class Reccomendations extends Component {
     
                 <div className='recc-container'>
                 {reccElements}
+                <AddReccCard/>
                 </div>
             )
         } else return (
+            <div>
             <div>No reccomendations found</div>
+            </div>
         )
     }
 }

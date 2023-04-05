@@ -8,7 +8,7 @@ reccController.getReccs = (req, res, next) => {
     const getReccsQuery = `SELECT * FROM reccs`
     db.query(getReccsQuery)
     .then(data => {
-        console.log(data.rows)
+        // console.log(data.rows)
         // store reccs (array of objects) in res.locals
         res.locals.reccs = data.rows;
         return next();

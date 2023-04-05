@@ -25,6 +25,12 @@ app.get('/recc',
         res.status(200).send(res.locals.reccs)
 })
 
+app.post('/recc', (req, res) => {
+    console.log(req.body)
+    console.log('got a post request!')
+    res.sendStatus(200);
+})
+
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}...`);
 });
