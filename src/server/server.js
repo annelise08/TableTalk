@@ -25,8 +25,7 @@ app.get('/recc',
         res.status(200).send(res.locals.reccs)
 })
 
-app.post('/recc', (req, res) => {
-    console.log(req.body)
+app.post('/recc', reccController.addRecc, (req, res) => {
     console.log('got a post request!')
     res.sendStatus(200);
 })

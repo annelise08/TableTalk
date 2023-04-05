@@ -16,3 +16,7 @@ nav {
     display: flex;
     justify-content: center;
 }
+
+.add-recc form button{
+    display: block;
+}

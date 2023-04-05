@@ -21,4 +21,25 @@ reccController.getReccs = (req, res, next) => {
     })
 }
 
+reccController.addRecc = (req, res, next) => {
+    console.log(req.body);
+    const { restaurant_name, fav_dishes, stars, notes, photo_name } = req.body;
+    const valuesArray = [0, restaurant_name, fav_dishes, stars, notes, photo_name ]
+    const insert = `INSERT INTO reccs(user_id, restaurant_name, fav_dishes, stars, notes, photo_name)
+    VALUES($1, $2, $3, $4, $5, $6)`
+
+    db.query(insert, valuesArray)
+        .then((res) =>{
+            console.log(res)
+            return next()
+        }
+        )
+        .catch(error => {
+            return next({
+                log: 'Error in addRecc controller',
+                message: {err: error}
+            })
+        })
+}
+
 module.exports = reccController;
