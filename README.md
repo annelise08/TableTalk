@@ -29,3 +29,4 @@ SETTING UP FRONT END
 - Imported bootstrap to styles.scss
 - Figured out I need to use React Bootstrap, installed that
 - Was able to get React Bootstrap working by requiring in css module in entry point(index.js file)
+- Added style sheet by importing to index.js

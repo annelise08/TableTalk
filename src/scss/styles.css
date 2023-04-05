@@ -1,3 +1,18 @@
 body {
-    background-color: aqua;
+    background-color: #fcf6f1;
+}
+
+.recc-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+nav {
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
 }

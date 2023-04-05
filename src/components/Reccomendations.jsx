@@ -1,6 +1,7 @@
 // Reccomendations page should request data from the database, then render all data as cards
 import React, { Component } from 'react';
 import ReccCard from './ReccCard';
+import {CardGroup} from 'react-bootstrap';
 
 class Reccomendations extends Component {
     constructor(props) {
@@ -39,7 +40,9 @@ class Reccomendations extends Component {
             })
             return (
     
-                <div>{reccElements}</div>
+                <div className='recc-container'>
+                {reccElements}
+                </div>
             )
         } else return (
             <div>No reccomendations found</div>
