@@ -22,7 +22,7 @@ reccController.getReccs = (req, res, next) => {
 }
 
 reccController.addRecc = (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     const { restaurant_name, fav_dishes, stars, notes, photo_name } = req.body;
     const valuesArray = [0, restaurant_name, fav_dishes, stars, notes, photo_name ]
     const insert = `INSERT INTO reccs(user_id, restaurant_name, fav_dishes, stars, notes, photo_name)
@@ -30,7 +30,7 @@ reccController.addRecc = (req, res, next) => {
 
     db.query(insert, valuesArray)
         .then((res) =>{
-            console.log(res)
+            // console.log(res)
             return next()
         }
         )

@@ -7,6 +7,7 @@ import AddReccCard from './AddReccCard';
 class Reccomendations extends Component {
     constructor(props) {
         super(props);
+        this.handleUpdateReccs = this.handleUpdateReccs.bind(this);
         // state should hold all user's reccs from db
         this.state = {
             fetchedReccs: false,
@@ -14,6 +15,7 @@ class Reccomendations extends Component {
         }
     }
     // when component mounts, make a fetch request
+    // separate fetching code from code to render recc card
     componentDidMount() {
         fetch('/recc/')
             .then(res => res.json())
@@ -25,6 +27,21 @@ class Reccomendations extends Component {
                     fetchedReccs: true
                 })
             })
+    }
+
+    // when we make a post request, update state with new recc
+
+    // interact with backend as high up on tree as possible
+    // app component is your starting place
+    // try to avoid cluttering the app
+    // keep components as small as possible- so each component has its own job
+    // have one component to manage displaying list of reccomendation card
+    // move add recc card to app, app would have code to handle on form submit
+    handleUpdateReccs(newRecc){
+        const newReccs = this.state.reccs.slice();
+        newReccs.push(newRecc);
+        console.log(this.state)
+        this.setState({reccs: newReccs});
     }
 
     render() {
@@ -43,7 +60,7 @@ class Reccomendations extends Component {
     
                 <div className='recc-container'>
                 {reccElements}
-                <AddReccCard/>
+                <AddReccCard onReccsChange={this.handleUpdateReccs}/>
                 </div>
             )
         } else return (

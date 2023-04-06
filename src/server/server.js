@@ -22,11 +22,12 @@ app.get('/recc',
     (req, res) => {
         console.log('made it to server!')
         // send back array of objects
+        // console.log(res.locals.reccs);
         res.status(200).send(res.locals.reccs)
 })
 
 app.post('/recc', reccController.addRecc, (req, res) => {
-    console.log('got a post request!')
+    // console.log('got a post request!')
     res.sendStatus(200);
 })
 

@@ -59,3 +59,8 @@ nav {
 .add-recc .btn {
     background-color: #7ac0f7;
 }
+
+.delete {
+    display: flex;
+    justify-content: center;
+}

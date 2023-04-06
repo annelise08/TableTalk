@@ -4,7 +4,13 @@ import Card from "react-bootstrap/Card";
 import { ListGroup } from "react-bootstrap";
 
 // need to pass a function down to addReccCard from Reccomendations that will update state in Reccomendations to include new state obj in reccs
-const AddReccCard = () => {
+const AddReccCard = (props) => {
+  // 1- separate out current onSubmit function, put function here and put function name on onSubmit
+  // want to keep JS out of components that we're rendering (out of render/return, keep JS in body)
+
+  // hooks are only for functional components
+  // add recc card's job is to keep state of form
+  // 
   return (
     <div className="add-recc">
       <h2>Add a reccomendation</h2>
@@ -19,9 +25,24 @@ const AddReccCard = () => {
           fetch("/recc", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ restaurant_name, fav_dishes, stars, notes, photo_name }),
+            body: JSON.stringify({
+              restaurant_name,
+              fav_dishes,
+              stars,
+              notes,
+              photo_name,
+            }),
           }).then((res) => {
             // console.log(res);
+            // this does not work, I think I need to do something else to update the state?
+
+            props.onReccsChange({
+              restaurant_name: restaurant_name,
+              fav_dishes: fav_dishes,
+              stars: stars,
+              notes: notes,
+              photo_name: photo_name,
+            });
           });
         }}
       >
@@ -45,7 +66,9 @@ const AddReccCard = () => {
           <label>Image link: </label>
           <input type="text" />
         </div>
-        <button type="submit" className="btn btn-primary">Add reccomendation</button>
+        <button type="submit" className="btn btn-primary">
+          Add reccomendation
+        </button>
       </form>
     </div>
   );
