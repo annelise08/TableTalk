@@ -31,6 +31,11 @@ app.post('/recc', reccController.addRecc, (req, res) => {
     res.sendStatus(200);
 })
 
+// delete an entry
+app.delete('/recc', reccController.deleteRecc, (req, res) => {
+  res.sendStatus(200)
+})
+
 // default error handler
 app.use((err, req, res, next) => {
     const defaultErr = {

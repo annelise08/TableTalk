@@ -7,6 +7,21 @@ const ReccCard = ({
     info
 }) => {
     const {restaurant_name, fav_dishes, stars, notes, photo_name} = info;
+
+    function deleteCard(){
+      // make a request to the back end
+      fetch('/recc', {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({restaurant_name})
+      })
+      .then((res) => {
+        // function to delete restaurant from state here
+      })
+    }
+
     return (
       <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={photo_name} />
@@ -17,7 +32,7 @@ const ReccCard = ({
           <ListGroup.Item> <b>Stars:</b> {stars}/5 </ListGroup.Item>
           <ListGroup.Item><b>Favorite Dishes: </b>{fav_dishes} </ListGroup.Item>
           <ListGroup.Item><b>Notes:</b> {notes} </ListGroup.Item>
-          <ListGroup.Item className="delete"><button className="btn btn-primary">Delete</button> </ListGroup.Item>
+          <ListGroup.Item className="delete"><button className="btn btn-primary" onClick={deleteCard}>Delete</button> </ListGroup.Item>
           </ListGroup>
         </Card.Text>
       </Card.Body>

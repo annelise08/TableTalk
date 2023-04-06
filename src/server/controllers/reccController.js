@@ -4,6 +4,7 @@ const express = require('express');
 
 const reccController = {};
 
+// this controller gets all data from database
 reccController.getReccs = (req, res, next) => {
     const getReccsQuery = `SELECT * FROM reccs`
     db.query(getReccsQuery)
@@ -20,6 +21,7 @@ reccController.getReccs = (req, res, next) => {
     })
 }
 
+// this controller adds a new entry into the database
 reccController.addRecc = (req, res, next) => {
     const { restaurant_name, fav_dishes, stars, notes, photo_name } = req.body;
     const valuesArray = [0, restaurant_name, fav_dishes, stars, notes, photo_name ]
@@ -34,6 +36,23 @@ reccController.addRecc = (req, res, next) => {
         .catch(error => {
             return next({
                 log: 'Error in addRecc controller',
+                message: {err: error}
+            })
+        })
+}
+
+reccController.deleteRecc = (req, res, next) => {
+    const { restaurant_name } = req.body;
+    const valuesArray = [restaurant_name];
+    const remove = `DELETE FROM reccs WHERE restaurant_name=$1`;
+
+    db.query(remove, valuesArray)
+        .then((res) => {
+            return next();
+        })
+        .catch(error => {
+            return next({
+                log: 'Error in deleteRecc controller',
                 message: {err: error}
             })
         })
