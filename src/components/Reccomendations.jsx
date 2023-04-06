@@ -8,6 +8,7 @@ class Reccomendations extends Component {
     constructor(props) {
         super(props);
         this.handleUpdateReccs = this.handleUpdateReccs.bind(this);
+        this.handleDeleteReccs = this.handleDeleteReccs.bind(this);
         // state should hold all user's reccs from db
         this.state = {
             fetchedReccs: false,
@@ -45,6 +46,19 @@ class Reccomendations extends Component {
         this.setState({reccs: newReccs});
     }
 
+    handleDeleteReccs(name){
+        const newReccs = this.state.reccs.slice();
+        // console.log(`Made it to handle delete ${newReccs}`)
+        for (let i = 0; i < newReccs.length; i++){
+            if (newReccs[i].restaurant_name === name){
+                // kept getting a type error here, fixed by assigning to a new variable
+                const returnReccs = newReccs.slice(0, i).concat(newReccs.slice(i + 1))
+                // console.log(newReccs)
+                this.setState({reccs: returnReccs})
+            }
+        }
+    }
+
     render() {
         // create a recc card for each recc component stored in the state
         if (this.state.fetchedReccs && this.state.reccs !== []) {
@@ -54,6 +68,7 @@ class Reccomendations extends Component {
                     <ReccCard
                     key={i}
                     info={recc}
+                    handleDeleteReccs = {this.handleDeleteReccs}
                     />
                 )
             })

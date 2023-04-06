@@ -3,10 +3,8 @@ import React from "react";
 import Card from 'react-bootstrap/Card'
 import { ListGroup } from "react-bootstrap";
 
-const ReccCard = ({
-    info
-}) => {
-    const {restaurant_name, fav_dishes, stars, notes, photo_name} = info;
+const ReccCard = (props) => {
+    const {restaurant_name, fav_dishes, stars, notes, photo_name} = props.info;
 
     function deleteCard(){
       // make a request to the back end
@@ -19,6 +17,7 @@ const ReccCard = ({
       })
       .then((res) => {
         // function to delete restaurant from state here
+        props.handleDeleteReccs(restaurant_name);
       })
     }
 
