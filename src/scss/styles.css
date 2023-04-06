@@ -64,3 +64,11 @@ nav {
     display: flex;
     justify-content: center;
 }
+
+.navbar-brand {
+    font-size: 4rem;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+}

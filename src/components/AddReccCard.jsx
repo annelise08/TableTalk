@@ -11,6 +11,7 @@ const AddReccCard = (props) => {
   // hooks are only for functional components
   // add recc card's job is to keep state of form
   // 
+  
   return (
     <div className="add-recc">
       <h2>Add a reccomendation</h2>

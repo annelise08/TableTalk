@@ -59,8 +59,8 @@ class Reccomendations extends Component {
             return (
     
                 <div className='recc-container'>
-                {reccElements}
                 <AddReccCard onReccsChange={this.handleUpdateReccs}/>
+                {reccElements}
                 </div>
             )
         } else return (
