@@ -7,10 +7,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                {/* <nav>
-                    <span>TableTalk</span>
-                </nav> */}
                 < NavBar />
+                <h2 className='my-reccs'>My restaurant reccomendations</h2>
                 < Reccomendations />
             </div>
         )

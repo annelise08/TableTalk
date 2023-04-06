@@ -14,7 +14,7 @@ class Reccomendations extends Component {
             reccs: []
         }
     }
-    // when component mounts, make a fetch request
+    // when component mounts, make a fetch request to get reccommendations from database
     // separate fetching code from code to render recc card
     componentDidMount() {
         fetch('/recc/')
@@ -37,15 +37,16 @@ class Reccomendations extends Component {
     // keep components as small as possible- so each component has its own job
     // have one component to manage displaying list of reccomendation card
     // move add recc card to app, app would have code to handle on form submit
+
+    // this function updates the state when a new recommendation is added
     handleUpdateReccs(newRecc){
         const newReccs = this.state.reccs.slice();
         newReccs.push(newRecc);
-        console.log(this.state)
         this.setState({reccs: newReccs});
     }
 
     render() {
-
+        // create a recc card for each recc component stored in the state
         if (this.state.fetchedReccs && this.state.reccs !== []) {
             const { reccs } = this.state;
             const reccElements = reccs.map((recc, i) => {
@@ -57,7 +58,7 @@ class Reccomendations extends Component {
                 )
             })
             return (
-    
+                // render the recc cards and the add recc card component
                 <div className='recc-container'>
                 <AddReccCard onReccsChange={this.handleUpdateReccs}/>
                 {reccElements}

@@ -2,6 +2,13 @@ body {
     background-color: #fcf6f1;
 }
 
+.my-reccs {
+    width: 90%;
+    margin: auto;
+    padding: .5rem;
+    font-size: 1.75rem;
+}
+
 .recc-container {
     display: flex;
     justify-content: flex-start;
@@ -19,6 +26,11 @@ nav {
 
 .add-recc {
     width: 18rem;
+    background-color: rgb(255, 255, 255);
+    margin: .5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(205, 205, 205);
+    padding: .5rem;
 }
 .add-recc form button{
     display: block;
@@ -72,3 +84,4 @@ nav {
 .nav-link {
     font-size: 1.5rem;
 }
+
