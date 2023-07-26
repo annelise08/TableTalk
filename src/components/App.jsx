@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Reccomendations from "./Reccomendations";
 import NavBar from "./NavBar";
 
-function App() {
+const App = () => {
   // app should render reccomendations page
   return (
     <div>

@@ -12,7 +12,7 @@ const AddReccCard = (props) => {
   // add recc card's job is to keep state of form
   //
 
-  function addRecc(e) {
+  const addRecc = (e) => {
     e.preventDefault();
     // get data from form submission
     const restaurant_name = e.target[0].value;
@@ -47,7 +47,7 @@ const AddReccCard = (props) => {
         photo_name: photo_name,
       });
     });
-  }
+  };
 
   // render the form
   return (

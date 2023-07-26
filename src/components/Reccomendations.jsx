@@ -4,11 +4,10 @@ import ReccCard from "./ReccCard";
 import { CardGroup } from "react-bootstrap";
 import AddReccCard from "./AddReccCard";
 
-function Reccomendations () {
-
+const Reccomendations = () => {
   // setting state: need to hold a "fetched data" state and a "reccs" (array of recc objects) state
-  const [reccs, setReccs] = useState([])
-  const [fetchedDataBool, setFetchedDataBool] = useState(false)
+  const [reccs, setReccs] = useState([]);
+  const [fetchedDataBool, setFetchedDataBool] = useState(false);
   // when component mounts, make a fetch request to get reccommendations from database
   // separate fetching code from code to render recc card
   useEffect(() => {
@@ -18,9 +17,9 @@ function Reccomendations () {
         if (!Array.isArray(reccs)) reccs = [];
         console.log(`Got reccs: ${reccs}`);
         setReccs(reccs);
-        setFetchedDataBool(true)
+        setFetchedDataBool(true);
       });
-  });
+  }, []);
 
   // when we make a post request, update state with new recc
 
@@ -35,7 +34,7 @@ function Reccomendations () {
   const handleUpdateReccs = (newRecc) => {
     const newReccs = reccs.slice();
     newReccs.push(newRecc);
-    setReccs(newReccs)
+    setReccs(newReccs);
   };
 
   const handleDeleteReccs = (title) => {
@@ -45,35 +44,31 @@ function Reccomendations () {
         // kept getting a type error here, fixed by assigning to a new variable
         const returnReccs = newReccs.slice(0, i).concat(newReccs.slice(i + 1));
         // console.log(newReccs)
-        setReccs(returnReccs)
+        setReccs(returnReccs);
       }
     }
-  }
+  };
 
-    // create a recc card for each recc component stored in the state
-    if (fetchedDataBool && reccs !== []) {
-      const reccElements = reccs.map((recc, i) => {
-        return (
-          <ReccCard
-            key={i}
-            info={recc}
-            handleDeleteReccs={handleDeleteReccs}
-          />
-        );
-      });
+  // create a recc card for each recc component stored in the state
+  if (fetchedDataBool && reccs !== []) {
+    const reccElements = reccs.map((recc, i) => {
       return (
-        // render the recc cards and the add recc card component
-        <div className="recc-container">
-          <AddReccCard onReccsChange={handleUpdateReccs} />
-          {reccElements}
-        </div>
+        <ReccCard key={i} info={recc} handleDeleteReccs={handleDeleteReccs} />
       );
-    } else
-      return (
-        <div>
-          <div>No reccomendations found</div>
-        </div>
-      );
-  }
+    });
+    return (
+      // render the recc cards and the add recc card component
+      <div className="recc-container">
+        <AddReccCard onReccsChange={handleUpdateReccs} />
+        {reccElements}
+      </div>
+    );
+  } else
+    return (
+      <div>
+        <div>No reccomendations found</div>
+      </div>
+    );
+}
 
 export default Reccomendations;

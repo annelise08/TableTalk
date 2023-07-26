@@ -6,7 +6,7 @@ import { ListGroup } from "react-bootstrap";
 const ReccCard = (props) => {
   const { restaurant_name, fav_dishes, stars, notes, photo_name } = props.info;
 
-  function deleteCard() {
+  const deleteCard = () => {
     // make a request to the back end
     fetch("/recc", {
       method: "DELETE",
@@ -18,7 +18,7 @@ const ReccCard = (props) => {
       // function to delete restaurant from state here
       props.handleDeleteReccs(restaurant_name);
     });
-  }
+  };
 
   return (
     <Card style={{ width: "18rem" }}>
