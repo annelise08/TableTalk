@@ -5,16 +5,6 @@ import { CardGroup } from "react-bootstrap";
 import AddReccCard from "./AddReccCard";
 
 function Reccomendations () {
-  // constructor() {
-  //   super();
-  //   this.handleUpdateReccs = this.handleUpdateReccs.bind(this);
-  //   this.handleDeleteReccs = this.handleDeleteReccs.bind(this);
-  //   // state should hold all user's reccs from db
-  //   this.state = {
-  //     fetchedReccs: false,
-  //     reccs: [],
-  //   };
-  // }
 
   // setting state: need to hold a "fetched data" state and a "reccs" (array of recc objects) state
   const [reccs, setReccs] = useState([])
@@ -50,7 +40,6 @@ function Reccomendations () {
 
   const handleDeleteReccs = (title) => {
     const newReccs = reccs.slice();
-    // console.log(`Made it to handle delete ${newReccs}`)
     for (let i = 0; i < newReccs.length; i++) {
       if (newReccs[i].restaurant_name === title) {
         // kept getting a type error here, fixed by assigning to a new variable
