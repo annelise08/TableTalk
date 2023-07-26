@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=production node src/server/server.js",
     "build": "webpack",
-    "dev": "NODE_ENV=development nodemon src/server/server.js & NODE_ENV=development webpack serve"
+    "dev": "NODE_ENV=development nodemon src/server/server.js & NODE_ENV=development webpack serve",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -35,9 +36,12 @@
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.22",
     "postcss-loader": "^7.2.4",
+    "prettier": "^2.8.8",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",

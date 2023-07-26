@@ -10,8 +10,8 @@ const AddReccCard = (props) => {
 
   // hooks are only for functional components
   // add recc card's job is to keep state of form
-  // 
-  
+  //
+
   function addRecc(e) {
     e.preventDefault();
     // get data from form submission
@@ -21,11 +21,11 @@ const AddReccCard = (props) => {
     const notes = e.target[3].value;
     const photo_name = e.target[4].value;
     // clear form values after they have been stored
-    e.target[0].value = ''
-    e.target[1].value = ''
-    e.target[2].value = ''
-    e.target[3].value = ''
-    e.target[4].value = ''
+    e.target[0].value = "";
+    e.target[1].value = "";
+    e.target[2].value = "";
+    e.target[3].value = "";
+    e.target[4].value = "";
     // post data to database
     fetch("/recc", {
       method: "POST",
@@ -47,16 +47,13 @@ const AddReccCard = (props) => {
         photo_name: photo_name,
       });
     });
-
   }
 
-  // render the form 
+  // render the form
   return (
     <div className="add-recc">
       <h2>Add a reccomendation</h2>
-      <form
-        onSubmit={addRecc}
-      >
+      <form onSubmit={addRecc}>
         <div>
           <label>Restaurant: </label>
           <input type="text" />
