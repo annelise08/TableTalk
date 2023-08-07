@@ -3,14 +3,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { ListGroup } from "react-bootstrap";
 
-// need to pass a function down to addReccCard from Reccomendations that will update state in Reccomendations to include new state obj in reccs
 const AddReccCard = (props) => {
-  // 1- separate out current onSubmit function, put function here and put function name on onSubmit
-  // want to keep JS out of components that we're rendering (out of render/return, keep JS in body)
-
-  // hooks are only for functional components
-  // add recc card's job is to keep state of form
-  //
 
   const addRecc = (e) => {
     e.preventDefault();
