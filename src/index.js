@@ -5,9 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import styles from "./scss/styles.css";
+import styles from "./client/scss/styles.css";
 
-import App from "./Components/App";
+import App from "./client/components/App";
 
 const node = document.getElementById("root");
 const root = createRoot(node);
