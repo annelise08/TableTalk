@@ -1,16 +1,14 @@
-import React, { Component } from "react";
-import Reccomendations from "./Reccomendations";
-import NavBar from "./NavBar";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./Home";
 
 const App = () => {
-  // app should render reccomendations page
   return (
-    <div>
-      <NavBar />
-      <h2 className="my-reccs">My restaurant reccomendations</h2>
-      <Reccomendations />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
-}
+};
 
 export default App;
