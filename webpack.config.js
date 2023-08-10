@@ -20,7 +20,8 @@ module.exports = {
         },
         proxy: {
             '/recc': 'http://localhost:3000',
-        }
+        },
+        historyApiFallback:true
     },
     module: {
         rules: [
