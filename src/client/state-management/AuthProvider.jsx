@@ -1,3 +1,4 @@
+import React from "react";
 import { createContext, useContext, useMemo } from "react";
 // useNavigate is a hook that returns a function that lets you navigate a user programatically
 import { useNavigate } from "react-router-dom";
@@ -15,7 +16,7 @@ const AuthProvider = ({ children }) => {
   const login = async (data) => {
     // sets the user using local storage, then navigate to the user's profile
     setUser(data);
-    navigate("/profile");
+    navigate("/home");
   };
 
   const logout = () => {
@@ -38,5 +39,5 @@ export default AuthProvider;
 
 // useAuth hook exposes users state and methods for login/ logout
 export const useAuth = () => {
-    return useContext(AuthContext)
-}
+  return useContext(AuthContext);
+};
