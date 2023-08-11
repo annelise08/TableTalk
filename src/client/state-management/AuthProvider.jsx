@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo } from "react";
 // useNavigate is a hook that returns a function that lets you navigate a user programatically
 import { useNavigate } from "react-router-dom";
-import { useLocalStorage } from "../state-management/hooks";
+import { useLocalStorage } from "./hooks";
 
 // context lets the parent component make some information available to any component in the tree below it w/o passing it specifically through props
 const AuthContext = createContext();
@@ -35,3 +35,8 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+
+// useAuth hook exposes users state and methods for login/ logout
+export const useAuth = () => {
+    return useContext(AuthContext)
+}
