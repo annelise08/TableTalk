@@ -5,7 +5,7 @@ import { useAuth } from "../state-management/AuthProvider";
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useAuth();
+  const { user, login } = useAuth();
 
   const navigate = useNavigate();
 
