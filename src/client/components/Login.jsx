@@ -13,7 +13,7 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //  send a post request to backend with user's username and password
-    fetch("/signin", {
+    fetch("/api/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -23,6 +23,7 @@ const LoginPage = () => {
       .then((res) => res.json())
       .then((valid) => {
         // if the user/pw combination is valid, run the login function, otherwise, redirect to signup page
+        // currently there is an error in the login function here
         if (valid) login(username);
         else navigate("/signup", { replace: true });
       })

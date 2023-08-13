@@ -36,7 +36,7 @@ app.delete("/recc", reccController.deleteRecc, (req, res) => {
 });
 
 // sign in user
-app.post("/signin", signInController.signIn, (req, res) => {
+app.post("/api/signin", signInController.signIn, (req, res) => {
   res.status(200).send(res.locals.verified)
 })
 

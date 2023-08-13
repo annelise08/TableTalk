@@ -14,8 +14,8 @@ signInController.signIn = (req, res, next) => {
   db.query(getUserQuery, valuesArray)
     .then((data) => {
       // if user is verified, send "true" back to front end
-      if (data.rows.length === 1) res.locals.verified = "true";
-      else res.locals.verified = "false";
+      if (data.rows.length === 1) res.locals.verified = true;
+      else res.locals.verified = false;
       // otherwise, send false back to front end
       return next();
     })
