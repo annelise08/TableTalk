@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Reccomendations from "./Reccomendations";
 import NavBar from "./NavBar";
 
-const App = () => {
+const Home = () => {
   // app should render reccomendations page
   return (
     <div>
@@ -13,4 +13,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
