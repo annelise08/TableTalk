@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Reccomendations from "./Reccomendations";
-import NavBar from "./NavBar";
+import Reccomendations from "../Reccomendations";
+import NavBar from "../NavBar";
 
 const Home = () => {
   // app should render reccomendations page
