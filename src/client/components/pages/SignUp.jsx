@@ -17,6 +17,10 @@ export const SignUp = () => {
     setPassword(e.target.value)
   }
 
+  const handleSubmit = (e) => {
+    // send request to backend
+  }
+
   return (
     <>
       <h1>Welcome to TableTalk!</h1>
