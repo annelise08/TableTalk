@@ -5,6 +5,7 @@ const path = require("path");
 const express = require("express");
 const reccController = require("./controllers/reccController");
 const signInController = require("./controllers/signInContoller");
+const signUpController = require("./controllers/signUpController");
 
 const app = express();
 
@@ -37,7 +38,12 @@ app.delete("/recc", reccController.deleteRecc, (req, res) => {
 
 // sign in user
 app.post("/api/signin", signInController.signIn, (req, res) => {
-  res.status(200).send(res.locals.verified)
+  res.status(200).send(res.locals.verified);
+});
+
+// sign up user
+app.post("/api/signup", signUpController.signUp, (req, res) => {
+  res.sendStatus(200);
 })
 
 // default error handler
