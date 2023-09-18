@@ -6,10 +6,14 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
 
   const handleFullname = (e) => {
+    const usernameTaken = document.getElementById("username-taken");
+    usernameTaken.style.display = "none"
     setFullname(e.target.value);
   };
 
   const handleUsername = (e) => {
+    const usernameTaken = document.getElementById("username-taken");
+    usernameTaken.style.display = "none"
     setUsername(e.target.value);
   };
 
@@ -26,7 +30,14 @@ export const SignUp = () => {
       body: JSON.stringify({ username, password, fullname }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        // true = user already exists in database, false = user does not exist in database
+        // if user already exists, display "username taken"
+        if (data == true) {
+          const usernameTaken = document.getElementById("username-taken");
+          usernameTaken.style.display = "inline"
+        }
+      })
       .catch((err) => console.log(err));
   };
 
@@ -53,6 +64,7 @@ export const SignUp = () => {
         />
         <button onClick={handleSubmit}>Sign up</button>
       </form>
+      <div id="username-taken">Username already exists.</div>
     </>
   );
 };
