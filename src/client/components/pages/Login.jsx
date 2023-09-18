@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../state-management/AuthProvider";
+import styles from '../../scss/login.scss'
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -37,7 +38,11 @@ const LoginPage = () => {
 
   return (
     <>
+      <div className="header-wrapper">
       <h1>TableTalk</h1>
+      <h5>Restaurant reccomendations from people you know.</h5>
+      </div>
+      <div className="wrapper">
       <form>
         <input
           type="text"
@@ -56,6 +61,7 @@ const LoginPage = () => {
         <button onClick={handleSubmit}>Sign in</button>
       </form>
       <button onClick={handleSignUp}>Sign up</button>
+      </div>
     </>
   );
 };

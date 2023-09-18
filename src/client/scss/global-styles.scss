@@ -1,5 +1,13 @@
+// primary color scheme
+$primary_1: #f4f3e7;
+$primary_2: #00473b;
+
 body {
-    background-color: #fcf6f1;
+    background-color: $primary_1;
+}
+
+h1 {
+    color: $primary_2;
 }
 
 .my-reccs {
