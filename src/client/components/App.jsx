@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./Home";
-import Login from "./Login";
-import { SignUp } from "./SignUp";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import { SignUp } from "./pages/SignUp";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 // basic app routing, home route should be protected so user needs to be logged in to see it

@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
     navigate("/", { replace: true });
   };
 
+  // useMemo is used for caching information
   const value = useMemo(
     () => ({
       user,
@@ -32,6 +33,7 @@ const AuthProvider = ({ children }) => {
     }),
     [user]
   );
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

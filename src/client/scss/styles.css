@@ -85,3 +85,7 @@ nav {
     font-size: 1.5rem;
 }
 
+#username-taken {
+    display: none;
+    color: red;
+}

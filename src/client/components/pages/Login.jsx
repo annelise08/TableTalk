@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../state-management/AuthProvider";
+import { useAuth } from "../../state-management/AuthProvider";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -27,7 +27,7 @@ const LoginPage = () => {
         if (valid) login(username);
         else navigate("/signup", { replace: true });
       })
-      .catch((err) => console.log('Error connecting to server to sign in.') )
+      .catch((err) => console.log("Error connecting to server to sign in."));
   };
 
   // handle submit for signup button, redirect to signup page
