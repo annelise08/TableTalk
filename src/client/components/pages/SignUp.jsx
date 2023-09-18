@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../state-management/AuthProvider";
 
 export const SignUp = () => {
+  // custom hooks for storing user's information
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  // functions for protected routes, logging in user
+  const { user, login } = useAuth();
+  const navigate = useNavigate();
 
   const handleFullname = (e) => {
     const usernameTaken = document.getElementById("username-taken");
@@ -37,6 +44,8 @@ export const SignUp = () => {
           const usernameTaken = document.getElementById("username-taken");
           usernameTaken.style.display = "inline"
         }
+        // if user doesn't exist, sign up is complete, route to home page
+        else if (data == false) login(username);
       })
       .catch((err) => console.log(err));
   };
