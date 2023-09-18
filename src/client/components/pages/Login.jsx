@@ -43,7 +43,7 @@ const LoginPage = () => {
       <h5>Restaurant reccomendations from people you know.</h5>
       </div>
       <div className="wrapper">
-      <form>
+      <form className="login-form">
         <input
           type="text"
           placeholder="Username"
@@ -58,9 +58,9 @@ const LoginPage = () => {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={handleSubmit}>Sign in</button>
+        <button className="sign-in-button" onClick={handleSubmit}>Sign in</button>
       </form>
-      <button onClick={handleSignUp}>Sign up</button>
+      <p onClick={handleSignUp}>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
       </div>
     </>
   );

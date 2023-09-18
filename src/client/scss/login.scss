@@ -1,3 +1,8 @@
+// primary color scheme
+$primary_1: #f4f3e7;
+$primary_2: #00473b;
+$primary_3: #b5ded8;
+
 html, body, #root {
     margin: 0;
     height: 100%;
@@ -20,8 +25,38 @@ h5 {
 }
 
 .wrapper {
-    width: 10rem;
+    width: 80%;
     margin: auto;
     grid-column: 1/4;
     grid-row: 2;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 5px;
+    width: 100%;
+    align-self: center;
+}
+
+button {
+    background-color: $primary_2;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10rem;
+}
+
+.sign-in-button {
+    width: 100%
+}
+
+@media screen and (min-width: 600px) {
+    .wrapper {
+        width: 20rem;
+    }
 }
