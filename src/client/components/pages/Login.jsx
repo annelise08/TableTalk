@@ -60,7 +60,7 @@ const LoginPage = () => {
         />
         <button className="sign-in-button" onClick={handleSubmit}>Sign in</button>
       </form>
-      <p onClick={handleSignUp}>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
+      <p>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
       </div>
     </>
   );

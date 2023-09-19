@@ -40,6 +40,9 @@ input {
     margin: 5px;
     width: 100%;
     align-self: center;
+    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid grey;
 }
 
 button {
@@ -52,7 +55,14 @@ button {
 }
 
 .sign-in-button {
-    width: 100%
+    width: 100%;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+p {
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 @media screen and (min-width: 600px) {
