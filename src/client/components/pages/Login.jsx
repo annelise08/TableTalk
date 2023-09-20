@@ -40,18 +40,18 @@ const LoginPage = () => {
     <>
       <div className={styles.headerWrapper}>
       <h1>TableTalk</h1>
-      <h5>Restaurant reccomendations from people you know.</h5>
+      <h5 className={styles.headerTagline}>Restaurant reccomendations from people you know.</h5>
       </div>
       <div className={styles.wrapper}>
       <form className={styles.loginForm}>
-        <input
+        <input className={styles.inputUserText}
           type="text"
           placeholder="Username"
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
-        <input
+        <input className={styles.inputUserText}
           type="password"
           placeholder="Password"
           onChange={(e) => {
@@ -60,7 +60,7 @@ const LoginPage = () => {
         />
         <button className={styles.signInButton} onClick={handleSubmit}>Sign in</button>
       </form>
-      <p>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
+      <p className={styles.loginParagraph}>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
       </div>
     </>
   );

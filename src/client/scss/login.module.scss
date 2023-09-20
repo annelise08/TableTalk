@@ -20,7 +20,7 @@ html, body, #root {
     margin: 1rem 1rem;
 }
 
-h5 {
+.headerTagline {
     font-size: 1rem;
 }
 
@@ -36,7 +36,7 @@ h5 {
     flex-direction: column;
 }
 
-input {
+.inputUserText {
     margin: 5px;
     width: 100%;
     align-self: center;
@@ -45,22 +45,19 @@ input {
     border: 1px solid grey;
 }
 
-button {
+.signInButton {
     background-color: $primary_2;
     border: none;
     color: white;
     margin: 5px;
     padding: 10px;
     border-radius: 10rem;
-}
-
-.signInButton {
     width: 100%;
     align-self: center;
     margin-top: 1rem;
 }
 
-p {
+.loginParagraph {
     text-align: center;
     margin-top: 1.5rem;
 }
