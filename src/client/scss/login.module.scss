@@ -1,0 +1,69 @@
+// primary color scheme
+$primary_1: #f4f3e7;
+$primary_2: #00473b;
+$primary_3: #b5ded8;
+
+html, body, #root {
+    margin: 0;
+    height: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 6fr 4fr;
+}
+
+.headerWrapper {
+    grid-column: 1/4;
+    text-align: center;
+    margin: 1rem 1rem;
+}
+
+.headerTagline {
+    font-size: 1rem;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    grid-column: 1/4;
+    grid-row: 2;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputUserText {
+    margin: 5px;
+    width: 100%;
+    align-self: center;
+    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid grey;
+}
+
+.signInButton {
+    background-color: $primary_2;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10rem;
+    width: 100%;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.loginParagraph {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+    .wrapper {
+        width: 20rem;
+    }
+}

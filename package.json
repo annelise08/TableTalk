@@ -22,7 +22,7 @@
   "homepage": "https://github.com/annelise08/TableTalk-solo-project#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.7",
-    "bootstrap": "^5.2.3",
+    "bootstrap": "^5.3.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "pg": "^8.10.0",
@@ -44,10 +44,10 @@
     "nodemon": "^2.0.22",
     "postcss-loader": "^7.2.4",
     "prettier": "^2.8.8",
-    "sass": "^1.60.0",
-    "sass-loader": "^13.2.2",
+    "sass": "^1.67.0",
+    "sass-loader": "^13.3.2",
     "style-loader": "^3.3.2",
-    "webpack": "^5.77.0",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.2"
   }
