@@ -52,7 +52,9 @@ export const SignUp = () => {
 
   return (
     <>
+    <div className="headerWrapper">
       <h1>Welcome to TableTalk!</h1>
+      </div>
       <form action="">
         <input
           type="text"
