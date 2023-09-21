@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../state-management/AuthProvider";
-import styles from '../../scss/login.module.scss'
+import styles from "../../scss/login.module.scss";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -39,28 +39,36 @@ const LoginPage = () => {
   return (
     <>
       <div className={styles.headerWrapper}>
-      <h1>TableTalk</h1>
-      <h5 className={styles.headerTagline}>Restaurant reccomendations from people you know.</h5>
+        <h1>TableTalk</h1>
+        <h5 className={styles.headerTagline}>
+          Restaurant reccomendations from people you know.
+        </h5>
       </div>
       <div className={styles.wrapper}>
-      <form className={styles.loginForm}>
-        <input className={styles.inputUserText}
-          type="text"
-          placeholder="Username"
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        />
-        <input className={styles.inputUserText}
-          type="password"
-          placeholder="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button className={styles.signInButton} onClick={handleSubmit}>Sign in</button>
-      </form>
-      <p className={styles.loginParagraph}>New here? <a href="http://localhost:8080/signup">Sign up</a></p>
+        <form className={styles.loginForm}>
+          <input
+            className={styles.inputUserText}
+            type="text"
+            placeholder="Username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <input
+            className={styles.inputUserText}
+            type="password"
+            placeholder="Password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <button className={styles.signInButton} onClick={handleSubmit}>
+            Sign in
+          </button>
+        </form>
+        <p className={styles.loginParagraph}>
+          New here? <a href="http://localhost:8080/signup">Sign up</a>
+        </p>
       </div>
     </>
   );

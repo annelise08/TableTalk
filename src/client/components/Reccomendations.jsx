@@ -67,6 +67,6 @@ const Reccomendations = () => {
         <div>No reccomendations found</div>
       </div>
     );
-}
+};
 
 export default Reccomendations;

@@ -11,6 +11,6 @@ const Home = () => {
       <Reccomendations />
     </div>
   );
-}
+};
 
 export default Home;

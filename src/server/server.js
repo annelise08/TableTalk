@@ -40,7 +40,7 @@ app.post("/api/signin", signInController.signIn, (req, res) => {
 // sign up user
 app.post("/api/signup", signUpController.signUp, (req, res) => {
   res.status(200).send(res.locals.usernameExists);
-})
+});
 
 // default error handler
 app.use((err, req, res, next) => {

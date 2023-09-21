@@ -5,7 +5,6 @@ import { ListGroup } from "react-bootstrap";
 import { useAuth } from "../state-management/AuthProvider";
 
 const AddReccCard = (props) => {
-
   const { user } = useAuth();
   const addRecc = (e) => {
     e.preventDefault();
