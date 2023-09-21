@@ -1,7 +1,7 @@
 # TableTalk-solo-project
 TableTalk lets you share restaurant recommendations with friends. Just create an account and start adding your recommendations!
 
-<h1>Getting started<h1>
+<h1>Getting started</h1>
 
 1. Clone the repository to your local machine.
 2. Install the dependencies by running: 
