@@ -2,9 +2,11 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ListGroup } from "react-bootstrap";
+import { useAuth } from "../state-management/AuthProvider";
 
 const AddReccCard = (props) => {
 
+  const { user } = useAuth();
   const addRecc = (e) => {
     e.preventDefault();
     // get data from form submission
@@ -24,6 +26,7 @@ const AddReccCard = (props) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        user,
         restaurant_name,
         fav_dishes,
         stars,
