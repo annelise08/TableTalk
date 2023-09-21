@@ -15,14 +15,10 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// tried using path.resolve to serve files, not working
-// app.get('/images', express.static(path.resolve('../images')))
-
-// test get request is working
-app.get("/recc", reccController.getReccs, (req, res) => {
+// get user's recommendations
+app.get("/recc/:user", reccController.getReccs, (req, res) => {
   console.log("made it to server!");
   // send back array of objects
-  // console.log(res.locals.reccs);
   res.status(200).send(res.locals.reccs);
 });
 
