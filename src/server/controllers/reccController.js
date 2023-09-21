@@ -6,8 +6,12 @@ const reccController = {};
 
 // this controller gets all data from database
 reccController.getReccs = (req, res, next) => {
-  const getReccsQuery = `SELECT * FROM reccs`;
-  db.query(getReccsQuery)
+  const {user} = req.params;
+  const valuesArray = [user]
+
+  // same deal here. I don't know why user has to be in quotes.
+  const getReccsQuery = `SELECT * FROM reccs WHERE "user"=$1`;
+  db.query(getReccsQuery, valuesArray)
     .then((data) => {
       // store reccs (array of objects) in res.locals
       res.locals.reccs = data.rows;
@@ -23,16 +27,18 @@ reccController.getReccs = (req, res, next) => {
 
 // this controller adds a new entry into the database
 reccController.addRecc = (req, res, next) => {
-  const { restaurant_name, fav_dishes, stars, notes, photo_name } = req.body;
+  const { user, restaurant_name, fav_dishes, stars, notes, photo_name } = req.body;
   const valuesArray = [
-    0,
+    user,
     restaurant_name,
     fav_dishes,
     stars,
     notes,
     photo_name,
   ];
-  const insert = `INSERT INTO reccs(user_id, restaurant_name, fav_dishes, stars, notes, photo_name)
+
+  // for some reason, user has to be in quotes. I don't know why.
+  const insert = `INSERT INTO reccs("user", restaurant_name, fav_dishes, stars, notes, photo_name)
     VALUES($1, $2, $3, $4, $5, $6)`;
 
   db.query(insert, valuesArray)
