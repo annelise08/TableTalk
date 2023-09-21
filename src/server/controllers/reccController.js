@@ -13,7 +13,6 @@ reccController.getReccs = (req, res, next) => {
   const getReccsQuery = `SELECT * FROM reccs WHERE "user"=$1`;
   db.query(getReccsQuery, valuesArray)
     .then((data) => {
-      console.log(data.rows)
       // store reccs (array of objects) in res.locals
       res.locals.reccs = data.rows;
       return next();
